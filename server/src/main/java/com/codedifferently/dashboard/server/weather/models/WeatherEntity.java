@@ -155,14 +155,14 @@ public class WeatherEntity {
 
     public static final WeatherEntity builder(WeatherApiData apiData){
         WeatherEntity entity = new WeatherEntity();
-        entity.setDescription(apiData.weather.get(0).getDescription());
-        entity.setFeelsLike(apiData.main.get("feels_like"));
-        entity.setTemp(apiData.main.get("temp"));
-        entity.setTempMin(apiData.main.get("temp_min"));
-        entity.setTempMax(apiData.main.get("temp_max"));
-        entity.setName(apiData.name);
-        entity.setLat(apiData.coord.get("lat"));
-        entity.setLon(apiData.coord.get("lon"));
+        entity.setDescription(apiData.getWeather().get(0).getDescription());
+        entity.setFeelsLike(apiData.getMain().get("feels_like"));
+        entity.setTemp(apiData.getMain().get("temp"));
+        entity.setTempMin(apiData.getMain().get("temp_min"));
+        entity.setTempMax(apiData.getMain().get("temp_max"));
+        entity.setName(apiData.getName());
+        entity.setLat(apiData.getCoord().get("lat"));
+        entity.setLon(apiData.getCoord().get("lon"));
         return entity;
     }
 }
